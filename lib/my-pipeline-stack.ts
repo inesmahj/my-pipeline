@@ -23,7 +23,7 @@ export class PipelineStack extends cdk.Stack {
         owner: 'inesmahj',
         repo: 'my-pipeline',
        
-        oauthToken: cdk.SecretValue.secretsManager('github-tokens'),
+        oauthToken: cdk.SecretValue.plainText('abb910946bdfa43192f9e35a909721e0e6cc0a84'),
         output: sourceArtifact,
       }),
       // For synthesize we use the default NPM synth
