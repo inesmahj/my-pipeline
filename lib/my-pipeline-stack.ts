@@ -13,6 +13,7 @@ export class PipelineStack extends cdk.Stack {
     const cloudAssemblyArtifact = new codepipeline.Artifact();
 
     // Create the CDK pipeline
+    const tokens='03bcab55e165cc450ddf4893d252b5a900cff622';
     const pipeline = new CdkPipeline(this, 'Pipeline', {
       pipelineName: 'ServerlessPipelineDemo',
       cloudAssemblyArtifact,
@@ -22,8 +23,8 @@ export class PipelineStack extends cdk.Stack {
         actionName: 'Source',
         owner: 'inesmahj',
         repo: 'my-pipeline',
-       
-        oauthToken: cdk.SecretValue.plainText('03bcab55e165cc450ddf4893d252b5a900cff622'),
+        
+        oauthToken: cdk.SecretValue.plainText(tokens),
         output: sourceArtifact,
       }),
       // For synthesize we use the default NPM synth
