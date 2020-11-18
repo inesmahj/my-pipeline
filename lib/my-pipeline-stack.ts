@@ -20,17 +20,7 @@ export class PipelineStack extends cdk.Stack {
       pipelineName: 'ServerlessPipelineDemo',
       cloudAssemblyArtifact,
 
-      // Checkout source from GitHub
-      sourceAction: new codepipeline_actions.GitHubSourceAction({
-        actionName: 'Source',
-        owner: 'inesmahj',
-        repo: 'my-pipeline',
-       
-        oauthToken: cdk.SecretValue.secretsManager('github-tokens'),
-        output: sourceArtifact,
-      }),
-      // For synthesize we use the default NPM synth
-      
+
     });
   }
 }
