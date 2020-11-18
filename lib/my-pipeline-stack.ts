@@ -30,16 +30,7 @@ export class PipelineStack extends cdk.Stack {
         output: sourceArtifact,
       }),
       // For synthesize we use the default NPM synth
-      synthAction: SimpleSynthAction.standardNpmSynth({
-        sourceArtifact,
-        cloudAssemblyArtifact,
-        // We override the default install command to prepare our lambda too
-        installCommand: 'npm ci && npm ci --prefix lambda',
-        // As we may need Docker we create a privileged container
-        environment: {
-          privileged: true,
-        },
-      }),
+      
     });
   }
 }
